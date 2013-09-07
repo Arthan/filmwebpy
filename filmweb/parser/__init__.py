@@ -27,7 +27,7 @@ class FilmwebHTTP(object):
         img_list.extend( soup.findAll('div', {'class':'hitImage'}) )
 
         for i, li in enumerate(li_list):
-            a = li.find('a',{'class':'hdr hdr-medium'})
+            a = li.find('a',{'class':re.compile('hdr.*')}) # class="hdr hdr-medium hitTitle" for now
             title = a.text
             url = a['href']
             # have to do another check because sometimes url doesnt provide movieID
@@ -60,7 +60,7 @@ class FilmwebHTTP(object):
 
 
         for i, li in enumerate(li_list):
-            a = li.find('a',{'class':'hdr hdr-medium'})
+            a = li.find('a',{'class':re.compile('hdr.*')}) # class="hdr hdr-medium hitTitle" for now
             title = a.text
             url = a['href']
             # have to do another check because sometimes url doesnt provide movieID

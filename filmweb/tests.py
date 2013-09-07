@@ -1,4 +1,4 @@
-﻿# coding=utf-8
+# coding=utf-8
 import unittest
 from filmweb import Filmweb
 import Levenshtein
@@ -31,8 +31,8 @@ class CheckMovieInfos(unittest.TestCase):
 
     def test_levenstein(self):
         org_title = u'The Girl Next Door'.replace("The","")
-        self.assertEqual('Girl Next Door, The',self.movie['title_original'])
-        self.assertEqual( Levenshtein.distance(org_title,self.movie['title_original'].replace("The","")) , 3 )
+        self.assertEqual('The Girl Next Door',self.movie['title_original'])
+        self.assertEqual( Levenshtein.distance(org_title,self.movie['title_original'].replace("The","")) , 0 )
 
 
 
