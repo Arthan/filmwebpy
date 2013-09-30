@@ -144,7 +144,7 @@ class NadZycieTest(unittest.TestCase):
         self.assertEqual(p['roleType'],u'aktor')
 
     def test_posters(self):
-        self.assertEqual( len(self.movie['posters']), 1)
+        self.assertEqual( len(self.movie['posters']), 2)
 
 
 class IxjanaTest(unittest.TestCase):
